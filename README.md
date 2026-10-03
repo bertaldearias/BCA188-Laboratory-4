@@ -1,4 +1,4 @@
-**Laboratory Activity 4: Analog Input, PWM, and DAC**
+#**Laboratory Activity 4: Analog Input, PWM, and DAC**
 
 **Hardware used:** Examples 3 and 4 were run on an ESP32-S3 Dev Module (potentiometer on GPIO4, LED on GPIO5). Example 5 (DAC) was run on an original ESP32 (DAC output on GPIO25), since the ESP32-S3 has no DAC.
 
