@@ -3,7 +3,7 @@
 **Hardware used:** Examples 3 and 4 were run on an ESP32-S3 Dev Module (potentiometer on GPIO4, LED on GPIO5). Example 5 (DAC) was run on an original ESP32 (DAC output on GPIO25), since the ESP32-S3 has no DAC.
 
 ***Table 1:*** *Potentiometer readings* (Board: ESP32-S3)
-
+'''
 +-------------------+------+-----------------+---------------------+
 | Knob Position (%) | Raw  | Millivolts (mV) | Expected (ideal, V) |
 +-------------------+------+-----------------+---------------------+
@@ -13,11 +13,11 @@
 |                75 | 3072 |            2543 |               2.476 |
 |               100 | 4095 |            3112 |               3.300 |
 +-------------------+------+-----------------+---------------------+
-
+'''
 Expected = raw / 4095 × 3.3 V.
 
 ***Table 2:*** *PWM duty* (Board: ESP32-S3)
-
+'''
 +-------------------+------+------------------+-----------------+---------------+
 | Knob Position (%) | Raw  | Predicted (calc) | Predicted (int) | Observed duty |
 +-------------------+------+------------------+-----------------+---------------+
@@ -27,11 +27,11 @@ Expected = raw / 4095 × 3.3 V.
 |                75 | 3071 |           191.23 |             191 |           191 |
 |               100 | 4095 |           255.00 |             255 |           255 |
 +-------------------+------+------------------+-----------------+---------------+
-
+'''
 Predicted = raw × 255 / 4095. The raw values differ from Table 1 because this was a separate run with the knob positioned by eye.
 
 ***Table 3:*** *DAC voltage* (Board: original ESP32, GPIO25, multimeter)
-
+'''
 +----------+----------------+--------------+----------+
 | DAC code | Calculated (V) | Measured (V) | Diff (V) |
 +----------+----------------+--------------+----------+
@@ -41,7 +41,7 @@ Predicted = raw × 255 / 4095. The raw values differ from Table 1 because this w
 |      192 |           2.48 |         2.45 |    -0.03 |
 |      255 |           3.30 |         3.30 |     0.00 |
 +----------+----------------+--------------+----------+
-
+'''
 Calculated = code / 255 × 3.3 V. Diff = Measured − Calculated.
 
 **Comparison of predicted and observed results**
